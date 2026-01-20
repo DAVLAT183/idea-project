@@ -77,9 +77,11 @@ export default function GameBoard() {
         if (isCorrect) {
             dispatch(increaseScore());
             dispatch(setTimeLeft(timeLeft + 5))
-            startRound();
-            localStorage.setItem("score",score+1)
-            localStorage.setItem("level",level)
+            startRound()
+
+            localStorage.setItem("score", String(score + 1))
+            localStorage.setItem("level", String(level))
+
         } else {
             dispatch(endGame());
         }
